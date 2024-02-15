@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Zap Scan
         run: |
-           docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-baseline.py -I -j \
+           docker run --rm -v $(pwd):/zap/wrk/:z -t ghcr.io/zaproxy/zaproxy:weekly zap-baseline.py -I -j \
            -t https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/  --hook=Py/auth_hook.py \
             * OUTOFSCOPE .*\.js
               

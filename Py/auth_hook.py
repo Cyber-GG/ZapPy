@@ -1,5 +1,5 @@
 import zap_auth
-import zap_config
+#import zap_config
 import zap_blindxss
 import os
 import traceback

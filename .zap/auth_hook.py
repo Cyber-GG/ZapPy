@@ -9,17 +9,17 @@ config = zap_config.ZapConfig()
 
 # Triggered when running a script directly (ex. python zap-baseline.py ...)
 def start_docker_zap(docker_image, port, extra_zap_params, mount_dir):
-    #config.load_config(extra_zap_params)
+    config.load_config(extra_zap_params)
 
- Triggered when running from the Docker image
-#def start_zap(port, extra_zap_params):
-    #config.load_config(extra_zap_params)
+# Triggered when running from the Docker image
+def start_zap(port, extra_zap_params):
+    config.load_config(extra_zap_params)
 
 def zap_started(zap, target):
     try:
-         ZAP Docker scripts reset the target to the root URL
+        # ZAP Docker scripts reset the target to the root URL
         if target.count('/') > 2:
-             The url can include a valid path, but always reset to spider the host
+            # The url can include a valid path, but always reset to spider the host
             target = target[0:target.index('/', 8)+1]
 
         scan_policy = 'Default Policy'

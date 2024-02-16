@@ -184,7 +184,7 @@ class ZapAuth:
                      self.config.auth_login_url)
 
         self.driver.get(self.config.auth_login_url)
-        
+
         # wait for the page to load
         time.sleep(5)
 
@@ -207,7 +207,6 @@ class ZapAuth:
                 # if the password field was not found, we probably need to submit to go to the password page
                 # login flow: username -> next -> password -> submit
                 self.fill_password()
-                                        
 
         # fill out the OTP field
         if self.config.auth_otp_secret:
@@ -228,7 +227,6 @@ class ZapAuth:
                     bodyElement.send_keys(Keys.Escape)
                     self.submit_form(self.config.auth_submitaction,
                                     self.config.auth_submit_field_name, username_element)
-                    
                 
                 self.fill_otp()
 
@@ -253,7 +251,6 @@ class ZapAuth:
                 submit_field_name, "submit", "//*[@type='submit' or @type='button' or @role='button' or button]")
             element.click()
             logging.info('Clicked the %s element', submit_field_name)
-                        
         elif username_element:
             username_element.submit()
             logging.info('Submitted the form')

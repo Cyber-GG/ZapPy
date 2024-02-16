@@ -22,4 +22,4 @@ jobs:
                 auth.password=Password@3101 \
                 auth.username_field=username \
                 auth.password_field=password \
-                auth.submit_field=Login"             
+                auth.submit_field=Login"

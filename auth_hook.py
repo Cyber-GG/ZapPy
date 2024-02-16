@@ -22,7 +22,7 @@ password = "Password@3101"
 driver = webdriver.Firefox(options = firefox_options)
 driver.get('https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/')
 current_url = driver.current_url
-print(current_url)
+logging.info(current_url)
 #totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
 #totp.now()
 
@@ -37,14 +37,14 @@ passwordid.send_keys(password)
 loginbutton = driver.find_element(By.ID, "Login")
 loginbutton.click()
 current_url = driver.current_url
-print(current_url)
+logging.info(current_url)
 time.sleep(10)
 current_url = driver.current_url
-print(current_url)
+logging.info(current_url)
 verify = driver.page_source
 #print(verify)
 current_url = driver.current_url
-print(current_url)
+logging.info(current_url)
 
 logging.info("Hi Welcome")
 

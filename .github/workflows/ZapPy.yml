@@ -11,13 +11,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Set up Environment Variables
-        run: |
-          echo "export ZAP_USERNAME=$ZAP_USERNAME" >> $GITHUB_ENV
-          echo "export ZAP_PASSWORD=$ZAP_PASSWORD" >> $GITHUB_ENV
-   
-
+       
       - name: Run Zap Scan
         run: |
           docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-baseline.py -I -j \

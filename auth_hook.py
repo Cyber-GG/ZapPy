@@ -13,6 +13,7 @@ import time
 logging.info("Hi Welcome")
 
 config = zap_config.ZapConfig()
+logging.info(config)
 
 # Triggered when running a script directly (ex. python zap-baseline.py ...)
 def start_docker_zap(docker_image, port, extra_zap_params, mount_dir):

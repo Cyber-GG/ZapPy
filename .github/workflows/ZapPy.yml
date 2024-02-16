@@ -16,7 +16,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-baseline.py -I -j \
           -t https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/  \
-          --hook=/zap/auth_hook.py \
+          --hook=/auth_hook.py \
             -z "auth.loginurl=https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/ \
                 auth.username=gomathy.gopinath@qualitestgroup.com.perftesin \
                 auth.password=Password@3101 \

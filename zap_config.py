@@ -14,7 +14,7 @@ class ZapConfig:
             self.extra_zap_params = extra_zap_params
             self.auth_display = self._get_zap_param_boolean('auth.display') or False
             self.auth_login_url = self._get_zap_param('auth.loginurl') or ''
-            self.auth_username = self._get_zap_param('auth.username') or ''
+            self.auth_username = self._get_zap_param('auth.user_name') or ''
             self.auth_password = self._get_zap_param('auth.password') or ''
             self.auth_otp_secret = self._get_zap_param('auth.otpsecret') or ''
             self.auth_submitaction = self._get_zap_param('auth.submitaction') or 'click'

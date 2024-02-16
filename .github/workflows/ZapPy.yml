@@ -22,7 +22,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/zap/wrk/:rw -t ictu/zap2docker-weekly zap-full-scan.py -I -j -m 10 -T 60 \
            -t https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/ \
-            --hook=auth_hook.py \
+            --hook=/zap/auth_hook.py \
             -z "auth.loginurl=https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/ \
              auth.username=gomathy.gopinath@qualitestgroup.com.perftestin \
              auth.password=Password@3101 \

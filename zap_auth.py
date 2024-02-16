@@ -184,6 +184,8 @@ class ZapAuth:
                      self.config.auth_login_url)
 
         self.driver.get(self.config.auth_login_url)
+        current_url = driver.current_url
+        logging.info("Sarada: %s",current_url)
 
         # wait for the page to load
         time.sleep(5)
@@ -208,9 +210,8 @@ class ZapAuth:
                 # login flow: username -> next -> password -> submit
                 self.fill_password()
                 current_url = driver.current_url
-                print("Sarada")
-                print(current_url)
-        
+                logging.info("Sai: %s",current_url)
+                        
 
         # fill out the OTP field
         if self.config.auth_otp_secret:
@@ -257,9 +258,8 @@ class ZapAuth:
             element.click()
             logging.info('Clicked the %s element', submit_field_name)
             current_url = driver.current_url
-            print("Sandy")
-            print(current_url)        
-            print("Sandy2")
+            logging.info("Sandy: %s",current_url)
+            
         elif username_element:
             username_element.submit()
             logging.info('Submitted the form')

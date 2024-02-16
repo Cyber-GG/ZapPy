@@ -1,4 +1,4 @@
-name: Zap MFA
+name: Zap Py
 
 on:
   push:

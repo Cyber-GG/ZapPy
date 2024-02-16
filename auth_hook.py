@@ -5,6 +5,7 @@ import os
 import traceback
 import logging
 
+logging.info("Hi Welcome")
 config = zap_config.ZapConfig()
 
 # Triggered when running a script directly (ex. python zap-baseline.py ...)

@@ -5,8 +5,9 @@ import os
 import traceback
 import logging
 
+logging.info("Hi Everyone")
 config = zap_config.ZapConfig()
-
+    
 # Triggered when running a script directly (ex. python zap-baseline.py ...)
 def start_docker_zap(docker_image, port, extra_zap_params, mount_dir):
     config.load_config(extra_zap_params)

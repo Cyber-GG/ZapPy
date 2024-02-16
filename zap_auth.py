@@ -208,6 +208,10 @@ class ZapAuth:
                 # login flow: username -> next -> password -> submit
                 self.fill_password()
 
+        current_url = driver.current_url
+        print("Sarada")
+        print(current_url)
+
         # fill out the OTP field
         if self.config.auth_otp_secret:
             try:
@@ -227,6 +231,10 @@ class ZapAuth:
                     bodyElement.send_keys(Keys.Escape)
                     self.submit_form(self.config.auth_submitaction,
                                     self.config.auth_submit_field_name, username_element)
+
+                 current_url = driver.current_url
+                 print("Sandy")
+                 print(current_url)
                 
                 self.fill_otp()
 
